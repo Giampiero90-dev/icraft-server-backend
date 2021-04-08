@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      creation.belongsTo(models.user), creation.hasOne(models.category);
+      creation.belongsTo(models.user);
+      creation.hasOne(models.category);
     }
   }
   creation.init(
