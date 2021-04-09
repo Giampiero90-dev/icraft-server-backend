@@ -6,8 +6,6 @@ const { Router } = express;
 
 const router = new Router();
 
-// router.get("/", (request, response) => response.send("Welcome to user!"));
-
 router.get("/", async (req, res, next) => {
   try {
     const users = await User.findAll({
