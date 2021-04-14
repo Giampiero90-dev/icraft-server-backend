@@ -89,7 +89,7 @@ router.post("/:userId", async (req, res, next) => {
   }
 });
 
-router.post("/:creationId/comments", async (req, res) => {
+router.post("/:creationId/comments", async (req, res, next) => {
   try {
     const creation = await Creation.findByPk(req.params.creationId);
     console.log(Creation);
@@ -113,7 +113,6 @@ router.post("/:creationId/comments", async (req, res) => {
     return res.status(201).send({ message: "Comment created", newComment });
   } catch (e) {
     console.log(e);
-    return res.status(e.message);
     next(e);
   }
 });
